@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{#base.html 상속받아 공통 레이아웃으로 사용#}
+
+{% block content %}
+    <h2>부서 목록</h2>
+
+    <table border="1">
+        <thead>
+          <tr>
+            <th>부서 코드</th>
+            <th>부서명</th>
+            <th>위치</th>
+            <th>상세 보기</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for dept in departments %}
+          <tr>
+            <td>{{ dept.dept_code }}</td>
+            <td>{{ dept.dept_name }}</td>
+            <td>{{ dept.location }}</td>
+            <td>
+              <a href="{{ url_for('emp.view_department', dept_code=dept.dept_code) }}">보기</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+
+      <br>
+      <a href="{{ url_for('emp.create_department') }}">➕ 부서 추가</a>
+    {% endblock %}

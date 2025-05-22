@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">사원 관리 시스템</h1>
+        <p class="lead">부서와 사원을 관리하는 웹 애플리케이션입니다.</p>
+        <hr class="my-4">
+        <p>아래 버튼을 클릭하여 부서와 사원을 관리하세요.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('emp.list_department') }}">부서 관리</a>
+        <a class="btn btn-success btn-lg" href="{{ url_for('emp.list_employee') }}">사원 관리</a>
+    </div>
+{% endblock %}

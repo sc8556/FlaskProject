@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{#base.html 상속받아 공통 레이아웃으로 사용#}
+
+{% block content %}
+    <h2>사원 등록</h2>
+
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.emp_name.label }}<br>
+            {{ form.emp_name(size=40) }}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=40) }}
+        </p>
+
+        <p>
+            {{ form.hire_date.label }}<br>
+            {{ form.hire_date() }}
+        </p>
+
+        <p>
+            {{ form.position.label }}<br>
+            {{ form.position(size=30) }}
+        </p>
+         <p>
+             {{ form.salary.label }}<br>
+             {{ form.salary() }}
+         </p>
+        <p>
+            {{ form.dept_code.label }}<br>
+            {{ form.dept_code() }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    <a href="{{ url_for('emp.list_employee') }}">목록</a>
+{% endblock %}

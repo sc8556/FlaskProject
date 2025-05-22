@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{#base.html 상속받아 공통 레이아웃으로 사용#}
+
+{% block content %}
+	<h2>사원 상세 정보</h2>
+<!-- 아래부터 수정 해야함 -->
+    <ul>
+        <li><strong>부서코드: </strong> {{ department.dept_code }}</li>
+        <li><strong>부서명: </strong> {{ department.dept_name }}</li>
+        <li><strong>위치: </strong> {{ department.location }}</li>
+        <li><strong>부서코드: </strong> {{ department.create_date }}</li>
+    </ul>
+
+    <hr>
+
+    <h3>소속 직원 목록</h3>
+    {% if employees %}
+        <table border="1">
+            <thead>
+            <tr>
+                <th>사원명</th>
+                <th>직급</th>
+                <th>이메일</th>
+                <th>입사일</th>
+                <th>상세보기</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for emp in employees %}
+                    <tr>
+                        <td>{{ emp.emp_name }}</td>
+                        <td>{{ emp.position }}</td>
+                        <td>{{ emp.email }}</td>
+                        <td>{{ emp.hire_date.strftime('%Y-%m-%d') }}</td>
+                        <td><a href="{{ url_for('emp.view_employee', emp_id=emp.emp_id) }}">보기</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>등록된 직원이 없음</p>
+        {% endif %}
+    <br>
+    <a href="{{ url_for('emp.list_department') }}">목록</a>
+{% endblock %}
