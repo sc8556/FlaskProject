@@ -51,6 +51,7 @@ def list_employee():
 @bp.route('/employee/create', methods=['GET', 'POST'])
 def create_employee():
     form = EmployeeForm()
+    form.dept_code.choices = [(d.dept_code, d.dept_name) for d in Department.query.all()]  # 초이스를 이용해서 부서
     if form.validate_on_submit():
         employee = Employee(
             emp_name=form.emp_name.data,

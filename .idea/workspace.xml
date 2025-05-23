@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="adea0125-dc4b-4138-8a3f-aca69d4a08a7" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pybo.db" beforeDir="false" afterPath="$PROJECT_DIR$/pybo.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pybo/templates/employee/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/employee/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pybo/templates/employee/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/employee/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pybo/views/main_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/views/main_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/views/emp_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/views/emp_views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747921912953</updated>
       <workItem from="1747921913890" duration="7217000" />
-      <workItem from="1748010487341" duration="1254000" />
+      <workItem from="1748010487341" duration="1965000" />
     </task>
     <servers />
   </component>
