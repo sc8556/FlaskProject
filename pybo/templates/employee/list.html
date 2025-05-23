@@ -1,32 +1,37 @@
 {% extends "base.html" %}
-{#base.html 상속받아 공통 레이아웃으로 사용#}
 
 {% block content %}
-    <h2>부서 목록</h2>
+  <h2>사원 목록</h2>
 
-    <table border="1">
-        <thead>
-          <tr>
-            <th>부서 코드</th>
-            <th>부서명</th>
-            <th>위치</th>
-            <th>상세 보기</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for dept in departments %}
-          <tr>
-            <td>{{ dept.dept_code }}</td>
-            <td>{{ dept.dept_name }}</td>
-            <td>{{ dept.location }}</td>
-            <td>
-              <a href="{{ url_for('emp.view_department', dept_code=dept.dept_code) }}">보기</a>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-    </table>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>이메일</th>
+        <th>직급</th>
+        <th>급여</th>
+        <th>부서</th>
+        <th>입사일</th>
+        <th>상세보기</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for emp in employees %}
+      <tr>
+        <td>{{ emp.emp_name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.position or '-' }}</td>
+        <td>{{ emp.salary or '-' }}</td>
+        <td>{{ emp.department.dept_name if emp.department else '없음' }}</td>
+        <td>{{ emp.hire_date.strftime('%Y-%m-%d') }}</td>
+        <td>
+          <a href="{{ url_for('emp.view_employee', emp_id=emp.emp_id) }}">보기</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
-      <br>
-      <a href="{{ url_for('emp.create_department') }}">➕ 부서 추가</a>
-    {% endblock %}
+  <br>
+  <a href="{{ url_for('emp.create_employee') }}">사원 추가</a>
+{% endblock %}

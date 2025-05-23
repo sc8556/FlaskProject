@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adea0125-dc4b-4138-8a3f-aca69d4a08a7" name="변경" comment="" />
+    <list default="true" id="adea0125-dc4b-4138-8a3f-aca69d4a08a7" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo.db" beforeDir="false" afterPath="$PROJECT_DIR$/pybo.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/templates/employee/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/employee/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/templates/employee/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/employee/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/views/main_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/views/main_views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,10 +28,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2xSC6Yav0rSkLDZmViyyMUbTpni" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,8 +42,9 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sc855/Desktop/practice/FlaskProject/pybo/templates/employee",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/sc855/Desktop/practice/FlaskProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +95,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1747921912953</updated>
-      <workItem from="1747921913890" duration="7059000" />
+      <workItem from="1747921913890" duration="7217000" />
+      <workItem from="1748010487341" duration="1254000" />
     </task>
     <servers />
   </component>
