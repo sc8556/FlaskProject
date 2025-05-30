@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Email, Length, Optional
 
 
 class DepartmentForm(FlaskForm):
-    dept_code = StringField('부서 코드', validators=[DataRequired(), Length(min=2, max=10)])
+    dept_code = StringField('부서코드', validators=[DataRequired(), Length(min=2, max=10)])
     dept_name = StringField('부서명', validators=[DataRequired(), Length(max=50)])
     location = StringField('위치', validators=[Length(max=100)])
     submit = SubmitField('등록')

@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="adea0125-dc4b-4138-8a3f-aca69d4a08a7" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.flaskenv" beforeDir="false" afterPath="$PROJECT_DIR$/.flaskenv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo.db" beforeDir="false" afterPath="$PROJECT_DIR$/pybo.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/templates/department/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/department/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/templates/department/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/department/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/templates/employee/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/employee/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/templates/employee/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/templates/employee/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pybo/views/emp_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/views/emp_views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/sc855/Desktop/practice/FlaskProject",
+    "last_opened_file_path": "C:/projects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,6 +63,7 @@
       <recent name="C:\Users\sc855\Desktop\practice\FlaskProject\pybo\templates\employee" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sc855\Desktop\practice\FlaskProject\pybo\templates" />
       <recent name="C:\Users\sc855\Desktop\practice\FlaskProject" />
     </key>
   </component>
@@ -93,7 +102,13 @@
       <option name="presentableId" value="Default" />
       <updated>1747921912953</updated>
       <workItem from="1747921913890" duration="7217000" />
-      <workItem from="1748010487341" duration="1965000" />
+      <workItem from="1748010487341" duration="2420000" />
+      <workItem from="1748053090907" duration="456000" />
+      <workItem from="1748063464640" duration="1451000" />
+      <workItem from="1748166334045" duration="312000" />
+      <workItem from="1748612585442" duration="139000" />
+      <workItem from="1748621907150" duration="1607000" />
+      <workItem from="1748623545709" duration="2536000" />
     </task>
     <servers />
   </component>

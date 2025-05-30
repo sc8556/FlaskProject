@@ -2,7 +2,7 @@
 {#base.html 상속받아 공통 레이아웃으로 사용#}
 
 {% block content %}
-	<h2>부서 상세 정보</h2>
+    <h2>부서 상세 정보</h2>
 
     <ul>
         <li><strong>부서코드: </strong> {{ department.dept_code }}</li>
@@ -26,20 +26,47 @@
             </tr>
             </thead>
             <tbody>
-                {% for emp in employees %}
-                    <tr>
-                        <td>{{ emp.emp_name }}</td>
-                        <td>{{ emp.position }}</td>
-                        <td>{{ emp.email }}</td>
-                        <td>{{ emp.hire_date.strftime('%Y-%m-%d') }}</td>
-                        <td><a href="{{ url_for('emp.view_employee', emp_id=emp.emp_id) }}">보기</a></td>
-                    </tr>
-                {% endfor %}
+            {% for emp in employees %}
+                <tr>
+                    <td>{{ emp.emp_name }}</td>
+                    <td>{{ emp.position }}</td>
+                    <td>{{ emp.email }}</td>
+                    <td>{{ emp.hire_date.strftime('%Y-%m-%d') }}</td>
+                    <td><a href="{{ url_for('emp.view_employee', emp_id=emp.emp_id) }}">보기</a></td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
-        {% else %}
-            <p>등록된 직원이 없음</p>
-        {% endif %}
+    {% else %}
+        <p>등록된 직원이 없음</p>
+    {% endif %}
     <br>
+    <ul class="pagination justify-content-center">
+        {% if employees.has_prev %}
+            <li class="page-item"><a class="page-link" href="?page={{ employees.prev_num }}">이전</a></li>
+        {% else %}
+            <li class="page-item disabled"><a class="page-link" tabindex="-1" aria-disabled="true"
+                                              href="javascript:void(0)">이전</a></li>
+        {% endif %}
+        {% for page_num in employees.iter_pages() %}
+            {% if page_num %}
+                {% if page_num != employees.page %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+                {% else %}
+                    <li class="page-item active" aria-current="page"><a class="page-link"
+                                                                        href="javascript:void(0)">{{ page_num }}</a>
+                    </li>
+                {% endif %}
+            {% else %}
+                <li class="disabled"><a class="page-link" href="javascript:void(0)">...</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if employees.has_next %} {# 여기에 employees 사용 #}
+            <li class="page-item"><a class="page-link" href="?page={{ employees.next_num }}">다음</a></li>
+        {% else %}
+            <li class="page-item disabled"><a class="page-link" tabindex="-1" aria-disabled="true"
+                                              href="javascript:void(0)">다음</a></li>
+        {% endif %}
+    </ul>
     <a href="{{ url_for('emp.list_department') }}">목록</a>
 {% endblock %}

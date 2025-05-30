@@ -37,21 +37,27 @@ def create_department():
 
 @bp.route('/department/<dept_code>')
 def view_department(dept_code):
+    page = request.args.get('page', type=int, default=1)
     departments = Department.query.get_or_404(dept_code)
-    employees = Employee.query.filter(Employee.dept_code == dept_code).all()
-    #department = db.relationship('Department', backref=db.backref('emp_set'))
+    # ▼ all() 때문에 list 객체로 반환되어 paginate 사용 불가
+    # employees = Employee.query.filter(Employee.dept_code == dept_code).all()
+    employees = Employee.query.order_by(Employee.hire_date.desc())  # paginate 사용하기 위해 변경
+    employees = employees.paginate(page=page, per_page=10)
     return render_template('department/detail.html', department=departments, employees=employees)
 
 # 사원 관련 라우트
 @bp.route('/employee')
 def list_employee():
-    employees = Employee.query.all()
+    page = request.args.get('page', type=int, default=1)
+    # employees = Employee.query.all() #all() 때문에 list 객체로 반환되어 paginate 사용 불가
+    employees = Employee.query.order_by(Employee.hire_date.desc()) # paginate 사용하기 위해 변경
+    employees = employees.paginate(page=page, per_page=10)
     return render_template('employee/list.html', employees=employees)
 
 @bp.route('/employee/create', methods=['GET', 'POST'])
 def create_employee():
     form = EmployeeForm()
-    form.dept_code.choices = [(d.dept_code, d.dept_name) for d in Department.query.all()]  # 초이스를 이용해서 부서
+    form.dept_code.choices = [(d.dept_code, d.dept_name) for d in Department.query.all()]  # choices 이용해서 사원등록 할 때 부서 보이게
     if form.validate_on_submit():
         employee = Employee(
             emp_name=form.emp_name.data,

@@ -5,7 +5,21 @@
     <h2>사원 등록</h2>
 
     <form method="post">
-        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <!-- 오류표시 Start -->
+        {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for field, errors in form.errors.items() %}
+                    <strong>{{ form[field].label }}</strong>
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <!-- 오류표시 End -->
 
         <p>
             {{ form.emp_name.label }}<br>
@@ -18,17 +32,19 @@
 
         <p>
             {{ form.hire_date.label }}<br>
-            {{ form.hire_date() }}
+            {{ form.hire_date(type="date", value=form.hire_date.data.strftime('%Y-%m-%d')
+                                            if form.hire_date.data
+                                            else '') }}
         </p>
 
         <p>
             {{ form.position.label }}<br>
             {{ form.position(size=30) }}
         </p>
-         <p>
-             {{ form.salary.label }}<br>
-             {{ form.salary() }}
-         </p>
+        <p>
+            {{ form.salary.label }}<br>
+            {{ form.salary() }}
+        </p>
         <p>
             {{ form.dept_code.label }}<br>
             {{ form.dept_code() }}
