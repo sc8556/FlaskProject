@@ -23,6 +23,11 @@ def list_department():
 def create_department():
     form = DepartmentForm()
     if form.validate_on_submit():
+        existing_department = Department.query.filter_by(dept_code=form.dept_code.data).first()
+        if existing_department:
+            flash('이미 존재하는 부서 코드입니다. 다른 코드를 사용해주세요.', 'danger')
+            return render_template('department/create.html', form=form)
+
         department = Department(
             dept_code=form.dept_code.data,
             dept_name=form.dept_name.data,
@@ -58,7 +63,12 @@ def list_employee():
 def create_employee():
     form = EmployeeForm()
     form.dept_code.choices = [(d.dept_code, d.dept_name) for d in Department.query.all()]  # choices 이용해서 사원등록 할 때 부서 보이게
+
     if form.validate_on_submit():
+        existing_emp = Employee.query.filter_by(email=form.email.data).first()
+        if existing_emp:
+            flash('이미 존재하는 이메일 입니다.', 'danger')
+            return render_template('employee/create.html', form=form)
         employee = Employee(
             emp_name=form.emp_name.data,
             email=form.email.data,
